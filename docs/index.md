@@ -2,6 +2,8 @@
 
 Para desenvolver o desafio de negocio, vamos montar a seguinte ETL
 
+## Fluxo
+
 ```mermaid
 graph TD;
     A[Configura Variáveis] --> B[Ler o Banco SQL];
@@ -12,3 +14,7 @@ graph TD;
     Y -->|Falha| Z[Alerta de Erro];
     Y -->|Sucesso| D[Salvar no DuckDB];
 ```
+
+## Contrato de dados
+
+::: app.schema.ProdutoSchema
