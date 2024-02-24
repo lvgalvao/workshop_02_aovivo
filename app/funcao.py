@@ -1,2 +1,2 @@
 def funcao_ola_turma():
-    pass
+    return "ola jornada"
