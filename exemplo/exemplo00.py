@@ -1,4 +1,4 @@
-from pydantic import BaseModel, PositiveInt, PositiveFloat
+from pydantic import BaseModel, PositiveFloat, PositiveInt
 
 dados = {
     "id_produto": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
