@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "workshop-02-aovivo"
+version = "0.1.0"
+description = ""
+authors = ["lvgalvaofilho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.5.3"
+mkdocs-mermaid2-plugin = "^1.1.1"
+mkdocs-material = "^9.5.11"
+mkdocstrings = {extras = ["python"], version = "^0.24.0"}
+taskipy = "^1.12.2"
+isort = "^5.13.2"
+black = "^24.2.0"
+pytest = "^8.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+format = """
+isort .
+black .
+"""
+kill = "kill -9 $(lsof -t -i :8000)"
+test = "pytest -v"
+run = """
+python3 app/main.py
+"""
+doc = "mkdocs serve"
